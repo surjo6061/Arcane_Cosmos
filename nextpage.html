@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the Cosmos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 80%;
+        }
+        .image-container img {
+            max-width: 30%;
+            margin: 10px;
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #0ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        .button:hover {
+            background-color: #00c1c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Explore the Cosmos with Surjo</h1>
+        <p>Witness the breathtaking beauty of the universe</p>
+    </div>
+    <div class="image-container">
+        <img src="edu_srch_celebrate_the_50th_anniversary_apollo11.webp" alt="NASA Image 1">
+        <img src="Voyager_spacecraft-thumb.jpg" alt="NASA Image 2">
+        <img src="voyager.webp" alt="NASA Image 3">
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='index.html'">Back to Home</button>
+        <button class="button" onclick="window.location.href='page3.html'">Next</button>
+    </div>
+</body>
+</html>
