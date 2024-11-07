@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Missions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            padding: 10px;
+            font-size: 18px;
+            width: 80%;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        .mission-list {
+            width: 80%;
+            text-align: center;
+        }
+        .mission-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .mission-list li {
+            margin: 10px 0;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #0ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        .button:hover {
+            background-color: #00c1c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>NASA Missions</h1>
+        <p>Explore the incredible missions of NASA</p>
+    </div>
+    <div class="search-container">
+        <input type="text" id="search-bar" class="search-bar" placeholder="Search for a mission..." onkeyup="filterMissions()">
+    </div>
+    <div class="mission-list">
+        <ul id="mission-list">
+            <li>Apollo Program</li>
+            <li>Artemis Program</li>
+            <li>International Space Station</li>
+            <li>Commercial Crew Program</li>
+            <li>Mercury Program</li>
+            <li>Gemini Program</li>
+            <li>Space Shuttle Program</li>
+            <li>Chandra X-ray Observatory</li>
+            <li>Cassini-Huygens</li>
+            <li>Curiosity Rover</li>
+            <li>James Webb Space Telescope</li>
+            <li>Able 1 (Pioneer 0)</li>
+            <li>Able 2 (Pioneer 1)</li>
+            <li>Able 4B (Pioneer P-3)</li>
+            <li>Able 5A (Pioneer P-30)</li>
+            <li>Able 5B (Pioneer P-31)</li>
+            <li>ACE (Advanced Composition Explorer)</li>
+            <li>ACME (Advanced Combustion via Microgravity Experiments)</li>
+            <li>ACRIMSAT (Active Cavity Irradiance Monitor Satellite)</li>
+            <li>ACS3 (Advanced Composite Solar Sail System)</li>
+            <li>ACT-America (Atmospheric Carbon and Transport – America)</li>
+            <li>ADEOS / Midori (Advanced Earth Observing Satellite)</li>
+            <li>Advanced Air Mobility (AAM)</li>
+            <li>Advanced Plant Habitat</li>
+            <li>Advanced Spacesuits</li>
+            <li>Akatsuki</li>
+            <li>AIM (Aeronomy of Ice in the Mesosphere)</li>
+            <li>AirMOSS (Airborne Microwave Observatory of Subcanopy and Subsurface)</li>
+            <li>AirSTAR</li>
+            <li>Analog Missions</li>
+            <li>Apollo 1</li>
+            <li>Apollo 7</li>
+            <li>Apollo 8</li>
+            <li>Apollo 9</li>
+            <li>Apollo 10</li>
+            <li>Apollo 11</li>
+            <li>Apollo 12</li>
+            <li>Apollo 13</li>
+            <li>Apollo 14</li>
+            <li>Apollo 15</li>
+            <li>Apollo 15 Subsatellite</li>
+            <li>Apollo 16</li>
+            <li>Apollo 16 Subsatellite</li>
+            <li>Apollo 17</li>
+            <li>Apollo-Soyuz Test Project</li>
+            <li>Aqua</li>
+            <li>Aquarius</li>
+            <li>ARCTAS (Arctic Research of the Composition of the Troposphere from Aircraft and Satellites)</li>
+            <li>ARIEL (Atmospheric Remote-sensing Infrared Exoplanet Large-survey)</li>
+            <li>Artemis 1</li>
+            <li>Artemis 2</li>
+            <li>ARTEMIS (THEMIS) (Acceleration, Reconnection, Turbulence and Electrodynamics of Moon’s Interaction with the Sun)</li>
+            <li>ASCA (Advanced Satellite for Cosmology and Astrophysics)</li>
+            <li>ASTHROS (Astrophysics Stratospheric Telescope for High Spectral Resolution Observations at Submillimeter-wavelengths)</li>
+            <li>Astro Observatory 1</li>
+            <li>Astro Observatory 2</li>
+            <li>ATLAS (Atmospheric Laboratory of Applications and Science)</li>
+            <li>Atlas 6 (Friendship 7)</li>
+            <li>Atlas 7 (Aurora 7)</li>
+            <li>Atlas 8 (Sigma 7)</li>
+            <li>Atlas 9 (Faith 7)</li>
+            <li>ATS (Applications Technology Satellite)</li>
+            <li>ATTREX (Airborne Tropical TRopopause Experiment)</li>
+            <li>ATom (Atmospheric Tomography Mission)</li>
+            <li>Aura</li>
+            <li>AWE (Atmospheric Waves Experiment)</li>
+        </ul>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='index.html'">Back to Home</button>
+        <button class="button" onclick="window.location.href='nextpage.html'">Back</button>
+    </div>
+    <script>
+        function filterMissions() {
+            const searchBar = document.getElementById('search-bar').value.toUpperCase();
+            const missionList = document.getElementById('mission-list');
+            const missions = missionList.getElementsByTagName('li');
+
+            for (let i = 0; i < missions.length; i++) {
+                const mission = missions[i].textContent || missions[i].innerText;
+                if (mission.toUpperCase().indexOf(searchBar) > -1) {
+                    missions[i].style.display = '';
+                } else {
+                    missions[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
